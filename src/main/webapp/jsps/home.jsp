@@ -37,7 +37,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		KK FUNDA, 
 		Martha Halli, Banglore,
 		Bangalore,
-		+91-9676831734,+91-9676831734
+		+91-96768317345,+91-9676831734
 		kkeducationblr@gmail.com
 		<br>
 		<a href="mailto:kkeducation@gmail.com">Mail to KK FUNDA</a>
