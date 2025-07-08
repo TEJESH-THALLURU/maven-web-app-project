@@ -36,7 +36,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<span style="font-weight: bold;">
 		KK FUNDA, 
 		Martha Halli, Banglore,
-		Bangalore,kn india
+		Bangalore,kn india 517591
 		+91-96768317345,+91-9676831734
 		kkeducationblr@gmail.com
 		<br>
