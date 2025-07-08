@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">devops</h1>
-<h1 align="center"> KK FUNDA</h1>
+<h1 align="center"> KK FUNDA jenkins</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -36,7 +36,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<span style="font-weight: bold;">
 		KK FUNDA, 
 		Martha Halli, Banglore,
-		Bangalore,
+		Bangalore,kn india
 		+91-96768317345,+91-9676831734
 		kkeducationblr@gmail.com
 		<br>
