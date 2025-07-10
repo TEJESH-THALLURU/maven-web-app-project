@@ -93,19 +93,22 @@
 		
 	</dependencies>
 	
-	<distributionManagement>
 	
-	    <repository>
-	      <id>nexus</id>
-	      <name>KK FUNDA Releases Nexus Repository</name>
-	      <url>http://172.31.40.189:8081/repository/flipkart-release/</url>
-	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>KK FUNDA Snapshot Nexus Repository </name>
-	      <url>http://172.31.40.189:8081/repository/flipkart-snapshot/</url>
-	    </snapshotRepository>
+	
+<distributionManagement>
+
+            <repository>
+              <id>nexus</id>
+              <name>KK FUNDA Releases Nexus Repository</name>
+              <url>http://13.201.61.135:8090/repository/jio-release/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>KK FUNDA Snapshot Nexus Repository </name>
+              <url>http://13.201.61.135:8090/repository/jio-snapshot/</url>
+            </snapshotRepository>
+
 	    
 	</distributionManagement>
 	
