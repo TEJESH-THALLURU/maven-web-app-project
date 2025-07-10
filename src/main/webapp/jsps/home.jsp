@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">devops</h1>
-<h1 align="center"> KK FUNDA jenkins</h1>
+<h1 align="center"> KK FUNDA jenkins this is groovy script</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
