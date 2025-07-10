@@ -101,10 +101,10 @@
 	    </repository>
 	    
 	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>KK FUNDA Snapshot Nexus Repository </name>
-	      <url>http://13.201.61.135:8090/repository/jio-snapshot-repo/</url>
-	    </snapshotRepository>
+    <id>nexus</id>  
+    <url>http://13.201.61.135:8090/repository/jio-snapshot-repo/</url>
+  </snapshotRepository>
+
 	    
 	</distributionManagement>
 	
