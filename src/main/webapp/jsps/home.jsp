@@ -1,51 +1,122 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.net.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>KK FUNDA Home Page practice</title>
-<link href="images/kkfunda.jpg" rel="icon">
-</head>
+    <meta charset="UTF-8">
+    <title>Tejesh Learning Website</title>
+    <link rel="icon" href="images/tejesh_logo.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1976d2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+        .section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #1976d2;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background-color: #1976d2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff9c4;
+            text-decoration: none;
+        }
+
+        img.logo {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        marquee {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<h1 align="center">devops</h1>
-<h1 align="center"> tejesh jenkins this is groovy script completed</h1>
-<hr>
-<br>
-	<h1><h3> Server Side IP Address </h3><br>
 
-<% 
-String ip = "";
-InetAddress inetAddress = InetAddress.getLocalHost();
-ip = inetAddress.getHostAddress();
-out.println("Server Host Name :: "+inetAddress.getHostName()); 
-%>
-<br>
-<%out.println("Server IP Address :: "+ip);%>
-</h1>
-<br>
-<h1><h3> Client Side IP Address </h3><br>
-<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
-<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
-<hr>
-<div style="text-align: center;">
-	<span>
-		<img src="images/kkfunda.jpg" alt="" width="100">
-	</span>
-	<span style="font-weight: bold;">
-		1-84,kshurikapuram,vijayapuram,ap india
-                <marquee>7893237317</marquee>
-		<br>
-		<a href="mailto:kkeducation@gmail.com">Mail to KK FUNDA</a>
-	</span>
+<header>
+    <img src="images/tejesh_logo.jpg" class="logo" alt="Tejesh Logo">
+    <h1>Tejesh Learning Website</h1>
+    <p>DevOps | Cloud | Scripting | CI/CD</p>
+</header>
+
+<div class="section">
+    <h2>Welcome to My Learning Journey!</h2>
+    <p>This is a simple JSP page powered with Groovy script and DevOps tools integration.</p>
 </div>
-<hr>
-	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
-<hr>
-<hr>
-<p align=center>KK FUNDA Training, Development Center.</p>
-<p align=center><small>Copyrights 2024 by <a href="google.com/">KK FUNDA</a> </small></p>
+
+<div class="info-box">
+    <h3>🌐 Server Side Information</h3>
+    <%
+        InetAddress inetAddress = InetAddress.getLocalHost();
+        String serverIp = inetAddress.getHostAddress();
+        String serverHost = inetAddress.getHostName();
+    %>
+    <p><strong>Server Host Name:</strong> <%= serverHost %></p>
+    <p><strong>Server IP Address:</strong> <%= serverIp %></p>
+</div>
+
+<div class="info-box">
+    <h3>💻 Client Side Information</h3>
+    <p><strong>Client IP Address:</strong> <%= request.getRemoteAddr() %></p>
+    <p><strong>Client Host:</strong> <%= request.getRemoteHost() %></p>
+</div>
+
+<div class="info-box">
+    <h3>📍 Contact Details</h3>
+    <p><strong>Tejesh</strong><br>
+    1-84, Kshurikapuram, Vijayapuram, 517586, AP, India</p>
+    <marquee>📞 7893237317</marquee>
+    <p>Email: <a href="mailto:tejeshlearning@gmail.com">tejeshlearning@gmail.com</a></p>
+</div>
+
+<div class="section">
+    <h3>📁 Service Link</h3>
+    <p>➡ <a href="services/employee/getEmployeeDetails">Get Employee Details</a></p>
+</div>
+
+<div class="footer">
+    <p>© 2025 Tejesh Learning Platform</p>
+    <p>Developed and Maintained by <a href="https://www.google.com/">Tejesh DevOps</a></p>
+</div>
 
 </body>
 </html>
