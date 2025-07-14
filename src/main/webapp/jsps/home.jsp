@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">devops</h1>
-<h1 align="center"> KK FUNDA jenkins this is groovy script completed</h1>
+<h1 align="center"> tejesh jenkins this is groovy script completed</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -34,11 +34,8 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/kkfunda.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		KK FUNDA, 
-		Martha Halli, Banglore,
-		Bangalore,kn india 517591
-		+91-96768317345,+91-9676831734
-		kkeducationblr@gmail.com
+		1-84,kshurikapuram,vijayapuram,ap india
+                <marquee>7893237317</marquee>
 		<br>
 		<a href="mailto:kkeducation@gmail.com">Mail to KK FUNDA</a>
 	</span>
