@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Tejesh | DevOps Portfolio</title>
+    <title>Tejesh | DevOps Portfolio|this is jenkins declarative pipeline</title>
     <link rel="icon" href="images/tejesh_logo.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
