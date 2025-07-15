@@ -116,7 +116,7 @@
     <div class="glass-box">
         <h2>🚀 About Me</h2>
         <p>I'm Tejesh, a passionate DevOps Engineer with hands-on experience in Jenkins, Docker, Kubernetes, Terraform, Ansible, and cloud platforms like AWS. I build scalable CI/CD pipelines and automate cloud infrastructure with precision.</p>
-        <button class="btn-hire">💼 Hire Me Now</button>
+        <button class="btn-hire">💼 contact me</button>
     </div>
 
     <div class="glass-box">
