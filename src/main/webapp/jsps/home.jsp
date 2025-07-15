@@ -108,7 +108,7 @@
 
 <header>
     <img src="images/tejesh_logo.jpg" alt="Tejesh Logo">
-    <h1>Tejesh | DevOps Engineer</h1>
+    <h1>Tejesh | DevOps Engineer |JENKINS DECLARATIVE PIPELINE</h1>
     <p>CI/CD • Cloud • Docker • Kubernetes • GitHub Actions • AWS</p>
 </header>
 
@@ -116,7 +116,7 @@
     <div class="glass-box">
         <h2>🚀 About Me</h2>
         <p>I'm Tejesh, a passionate DevOps Engineer with hands-on experience in Jenkins, Docker, Kubernetes, Terraform, Ansible, and cloud platforms like AWS. I build scalable CI/CD pipelines and automate cloud infrastructure with precision.</p>
-        <button class="btn-hire">💼 contact me</button>
+        <button class="btn-hire">💼CONTACT ME</button>
     </div>
 
     <div class="glass-box">
