@@ -1,92 +1,95 @@
-node
-{
+pipeline {
+    agent any
 
-   echo "git branch name: ${env.BRANCH_NAME}"
-   echo "build number is: ${env.BUILD_NUMBER}"
-   echo "node name is: ${env.NODE_NAME}"
-
-
-   // /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.9.9/bin
-   def mavenHome=tool name: "maven"
-    try
-    {
-
-  stage('git checkout')
-  {
-    notifyBuild('STARTED')
-    git branch: 'development', url: 'https://github.com/kkdevopsb5/maven-webapplication-project-kkfunda.git'
-  } 
-
-    stage('COMPILE')
-  {
-    sh "${mavenHome}/bin/mvn clean compile"
-  }
-
-  stage('Build')
-  {
-    sh "${mavenHome}/bin/mvn clean package"
-  }
-
-    stage('SQ Report')
-  {
-    sh "${mavenHome}/bin/mvn sonar:sonar"
-  }
-
-      stage('Upload Artifact')
-  {
-
-    sh "${mavenHome}/bin/mvn clean deploy"
-  }
-
-    stage('Deploy to Tomcat') 
-    {
-      
-      sh """
-
-      curl -u kk:password \
---upload-file /var/lib/jenkins/workspace/jio-scripted-way-PL/target/maven-web-application.war \
-"http://3.109.2.100:9090/manager/text/deploy?path=/maven-web-application&update=true"
-          
-        """
+    tools {
+        maven 'maven'
     }
 
-    }  //try ending
+    triggers {
+        pollSCM('* * * * *')
+    }
 
-    catch (e) {
-   
-       currentBuild.result = "FAILED"
+    stages {
+        stage('notify')
+        {
+            steps{
+        notifyBuild('STARTED')
+        }}
+        stage('git checkout') {
+            steps {
+                git(branch: 'dev', url: 'https://github.com/TEJESH-THALLURU/maven-web-app-project.git')
+            }
+        }
 
-  } finally {
-    // Success or failure, always send notifications
-    notifyBuild(currentBuild.result)
-  }
-  
-} // node ending
+        stage('build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
 
+        stage('compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
 
+        stage('sonar') {
+            steps {
+                sh "mvn sonar:sonar"
+            }
+        }
+
+        stage('nexus') {
+            steps {
+                sh "mvn deploy"
+            }
+        }
+
+        stage('Deploy to tomcat') {
+            steps {
+                sh """
+                curl -u kk:password \
+                --upload-file /var/lib/jenkins/workspace/jio-declarative-pl/target/maven-web-application.war \
+                "http://15.207.114.222:9090/manager/text/deploy?path=/maven-web-application&update=true"
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                notifyBuild(currentBuild.result)
+            }
+        }
+
+        failure {
+            script {
+                notifyBuild(currentBuild.result)
+            }
+        }
+    }
+}
+
+// Notification method
 def notifyBuild(String buildStatus = 'STARTED') {
-  // build status of null means successful
-  buildStatus =  buildStatus ?: 'SUCCESS'
+    buildStatus = buildStatus ?: 'SUCCESS'
 
-  // Default values
-  def colorName = 'RED'
-  def colorCode = '#FF0000'
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL})"
+    def colorCode
+    def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+    def summary = "${subject} (${env.BUILD_URL})"
 
-  // Override default values based on build status
-  if (buildStatus == 'STARTED') {
-    color = 'YELLOW'
-    colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESS') {
-    color = 'GREEN'
-    colorCode = '#00FF00'
-  } else {
-    color = 'RED'
-    colorCode = '#FF0000'
-  }
+    switch (buildStatus) {
+        case 'STARTED':
+            colorCode = '#FFFF00' // Yellow
+            break
+        case 'SUCCESS':
+            colorCode = '#00FF00' // Green
+            break
+        default:
+            colorCode = '#FF0000' // Red
+    }
 
-  // Send notifications
-  slackSend (color: colorCode, message: summary, channel: '#jio-devteam')
-  slackSend (color: colorCode, message: summary, channel: '#jio-devops')
+    slackSend(color: colorCode, message: summary ,channel: '#jio-scripted')
+    slackSend(color: colorCode, message: summary ,channel: '#jio-project')
 }
